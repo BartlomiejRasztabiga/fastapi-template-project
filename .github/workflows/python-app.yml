@@ -42,7 +42,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Test
         run: |
-          TAG=stag sh ./scripts/build-push.sh
+          TAG=stag sh ./scripts/build.sh
 
   build-production:
     runs-on: ubuntu-latest
@@ -59,4 +59,4 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Test
         run: |
-          TAG=prod sh ./scripts/build-push.sh
+          TAG=prod sh ./scripts/build.sh
