@@ -9,13 +9,13 @@ on:
   pull_request:
     branches: [master]
 
-strategy:
-  matrix:
-    python-version: [3.6, 3.7, 3.8]
-
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +30,10 @@ jobs:
   build-staging:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -42,6 +46,10 @@ jobs:
 
   build-production:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
       - uses: actions/checkout@v2
