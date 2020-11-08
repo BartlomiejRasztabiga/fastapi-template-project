@@ -23,7 +23,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Build production
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          black: true
+          flake8: true
+      - name: Test
         run: |
           sh ./scripts/test.sh
 
