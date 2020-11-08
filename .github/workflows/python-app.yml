@@ -25,7 +25,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run linters
         run: |
-          sh ./app/scripts/lint.sh
+          sh ./backend/app/scripts/lint.sh
       - name: Test
         run: |
           sh ./scripts/test.sh
