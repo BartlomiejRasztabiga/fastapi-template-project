@@ -26,8 +26,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run linters
         run: |
-          pip install black mypy flake8
-          sh ./backend/app/scripts/lint.sh
+          pip install black mypy flake8 isort
+          sh ./scripts/lint.sh
+        working-directory: ./backend/app
       - name: Test
         run: |
           sh ./scripts/test.sh
