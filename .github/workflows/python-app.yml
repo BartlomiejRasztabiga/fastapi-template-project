@@ -30,6 +30,7 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: |
+          cd backend/app
           poetry install
       - name: Run linters
         run: |
